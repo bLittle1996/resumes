@@ -1,0 +1,143 @@
+:root {
+  /* Please choose AA contrast colors (4.5:1 for regular text, 3:1 for big text) */
+  --main-text: #000;
+  --secondary-text: #5e6666;
+  --green-text: #39a038;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  letter-spacing: 0.01rem;
+}
+
+html,
+body {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1.08em;
+  color: var(--main-text);
+  /* enable below for dev, uncomment for print */
+  /* background: grey;
+  margin: 1rem; */
+}
+
+main {
+  background: white;
+  /* the dimensions of a letter piece of paper - what it would likely be printed on */
+  width: 8.5in;
+  height: 11in;
+  /* uncomment the padding for development as it simulates the printing margins kind of okay, turn off when saving */
+  /* padding: 0.5in 1in; */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h1 *,
+h2 *,
+h3 *,
+h4 *,
+h5 *,
+h6 * {
+  font-family: "Noto Sans JP", serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+abbr {
+  text-decoration: none;
+}
+
+section h2 {
+  font-size: 1.25rem;
+  color: var(--green-text);
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+section {
+  margin-bottom: 1rem;
+}
+
+section h2 {
+  margin-bottom: 0.5rem;
+}
+
+/* Contact Info */
+
+section#contact-info h1 {
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+section#contact-info ul {
+  display: grid;
+  color: var(--secondary-text);
+  grid-template-columns: 1fr 1fr;
+  row-gap: 0.25rem;
+}
+
+/* Skills */
+
+section#skills li {
+  display: inline;
+}
+
+section#skills li:not(:last-child)::after {
+  content: ",";
+}
+
+/* section#skills li:nth-last-child(2)::after {
+  content: ", and";
+} */
+
+/* Experience */
+
+section#experience ul {
+  list-style: initial;
+  margin-left: 2rem;
+}
+
+/* each job section */
+section#experience ol > li {
+  margin-bottom: 1rem;
+}
+
+section#experience .duration {
+  color: var(--secondary-text);
+}
+
+section#experience .role-type::before {
+  content: "| ";
+}
+
+section#experience .title {
+  font-size: 1.05rem;
+}
+
+section#experience .title .where {
+  color: var(--secondary-text);
+  text-transform: capitalize;
+  font-weight: 400;
+}
+
+section#experience .title .where::before {
+  content: "— ";
+  position: relative;
+  bottom: 1px;
+}
+
+section#experience ol > li > * {
+  margin-bottom: 0.5rem;
+}
