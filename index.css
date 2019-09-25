@@ -102,7 +102,7 @@ section#contact-info h1 {
 
 section#contact-info ul {
   display: grid;
-  color: var(--secondary-text);
+  /* color: var(--secondary-text); */
   grid-template-columns: 1fr 1fr;
   row-gap: 0.25rem;
 }
@@ -172,7 +172,7 @@ section#experience .title {
 }
 
 section#experience .title .where {
-  color: var(--secondary-text);
+  /* color: var(--secondary-text); */
   text-transform: capitalize;
   font-weight: 700;
 }
