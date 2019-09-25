@@ -17,20 +17,39 @@ body {
   font-family: "Noto Sans", sans-serif;
   font-size: 1.08em;
   color: var(--main-text);
-  /* enable below for dev, uncomment for print */
-  /* background: grey;
-  margin: 1rem; */
+  background: grey;
+  margin: 1rem;
+}
+
+@media print {
+  html,
+  body {
+    background: unset;
+    margin: 0;
+  }
 }
 
 main {
   background: white;
   /* the dimensions of a letter piece of paper - what it would likely be printed on */
   width: 8.5in;
-  height: 11in;
-  /* uncomment the padding for development as it simulates the printing margins kind of okay, turn off when saving */
-  /* padding: 0.5in 1in; */
+  /* 13in instead of 11 because it better matches the final print version in the browser */
+  height: 13in;
+  padding: 0.5in;
   margin: 0 auto;
   overflow: hidden;
+}
+
+@media print {
+  main {
+    padding: unset;
+    height: 11in;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 h1,
@@ -90,11 +109,26 @@ section#contact-info ul {
 
 /* Skills */
 
-section#skills li {
+section#skills .master-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.5rem;
+}
+
+section#skills .category {
+  /* treats children as if they were where the parent is, breaks accessibility on some browsers, but that's okay for resume */
+  display: contents;
+}
+
+section#skills .category ul {
+  display: inline-block;
+}
+
+section#skills .category li {
   display: inline;
 }
 
-section#skills li:not(:last-child)::after {
+section#skills .category li:not(:last-child)::after {
   content: ",";
 }
 
@@ -111,15 +145,26 @@ section#experience ul {
 
 /* each job section */
 section#experience ol > li {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 section#experience .duration {
+  /* color: var(--secondary-text); */
+  justify-self: end;
+}
+
+section#experience .tools-used {
   color: var(--secondary-text);
 }
 
 section#experience .role-type::before {
   content: "| ";
+}
+
+section#experience .title-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 2rem;
 }
 
 section#experience .title {
@@ -129,7 +174,7 @@ section#experience .title {
 section#experience .title .where {
   color: var(--secondary-text);
   text-transform: capitalize;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 section#experience .title .where::before {
