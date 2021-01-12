@@ -116,7 +116,6 @@ section#contact-info ul {
 /* Skills */
 
 section#skills .category {
-  /* treats children as if they were where the parent is, breaks accessibility on some browsers, but that's okay for resume */
   display: block;
 }
 
