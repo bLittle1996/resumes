@@ -43,6 +43,7 @@ main {
 @media print {
   main {
     padding: unset;
+    /* Prevents a blank second page from being printed */
     height: 11in;
     overflow: visible;
   }
