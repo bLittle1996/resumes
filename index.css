@@ -15,7 +15,7 @@
 html,
 body {
   font-family: "Noto Sans", sans-serif;
-  font-size: 1.08em;
+  font-size: 1em;
   color: var(--main-text);
   background: grey;
   margin: 1rem;
@@ -44,6 +44,7 @@ main {
   main {
     padding: unset;
     height: 11in;
+    overflow: visible;
   }
 }
 
@@ -69,6 +70,10 @@ h6 * {
   letter-spacing: 1px;
 }
 
+.font-weight-normal {
+  font-weight: normal;
+}
+
 abbr {
   text-decoration: none;
 }
@@ -88,7 +93,7 @@ section {
 }
 
 section h2 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 /* Contact Info */
@@ -109,15 +114,9 @@ section#contact-info ul {
 
 /* Skills */
 
-section#skills .master-list {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  column-gap: 0.5rem;
-}
-
 section#skills .category {
   /* treats children as if they were where the parent is, breaks accessibility on some browsers, but that's okay for resume */
-  display: contents;
+  display: block;
 }
 
 section#skills .category ul {
@@ -126,6 +125,9 @@ section#skills .category ul {
 
 section#skills .category li {
   display: inline;
+}
+section#skills .category .label {
+  font-weight: bold;
 }
 
 section#skills .category li:not(:last-child)::after {
@@ -145,7 +147,7 @@ section#experience ul {
 
 /* each job section */
 section#experience ol > li {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 section#experience .duration {
